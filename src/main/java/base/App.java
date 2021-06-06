@@ -18,7 +18,8 @@ public class App {
         String adjective = myApp.adjectiveInput();
         String adverb = myApp.adverbInput();
 
-        myApp.madLibOutput(noun, verb, adjective, adverb);
+        String output = myApp.buildOutput(noun, verb, adjective, adverb);
+        myApp.madLibOutput(output);
     }
 
     public String nounInput() {
@@ -41,7 +42,11 @@ public class App {
         return input.nextLine();
     }
 
-    public void madLibOutput(String noun, String verb, String adjective, String adverb) {
-        System.out.println("Do you " + verb + " your " + adjective + " " + noun + " " + adverb + "? That's hilarious!");
+    public String buildOutput(String noun, String verb, String adjective, String adverb) {
+        return "Do you " + verb + " your " + adjective + " " + noun + " " + adverb + "? That's hilarious!";
+    }
+
+    public void madLibOutput(String output) {
+        System.out.println(output);
     }
 }
